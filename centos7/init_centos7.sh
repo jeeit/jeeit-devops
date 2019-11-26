@@ -1,29 +1,43 @@
+#
+#centos7
+#https://github.com/aqzt/kjyw/blo ... ipt/init_centos7.sh
+#使用例子
+#wget hhttps://github.com/aqzt/kjyw/blo ... ipt/init_centos7.sh
+#bash init_centos7.sh 主机名
+#bash init_centos7.sh test123
+#
+#curl -s https://raw.githubusercontent.com/aqzt/kjyw/master/linux-init-script/init_centos7.sh | bash
+#或者
+#curl -fsSL https://raw.githubusercontent.com/aqzt/kjyw/master/linux-init-script/init_centos7.sh | sed 's/\r//g' | sh
+#
+#
+
 #!/bin/bash
-# init centos7
-# 20160818
+ init centos7
+ 20160818
 
 # 检查是否为root用户，脚本必须在root权限下运行
-#if [[ "$(whoami)" != "root" ]]; then
-#    echo "please run this script as root !" >&2
-#    exit 1
-#fi
-#echo -e "\033[31m the script only Support CentOS_7 x86_64 \033[0m"
-#echo -e "\033[31m system initialization script, Please Seriously. press ctrl+C to cancel \033[0m"
-#
-## 检查是否为64位系统，这个脚本只支持64位脚本
-#platform=`uname -i`
-#if [ $platform != "x86_64" ];then
-#    echo "this script is only for 64bit Operating System !"
-#    exit 1
-#fi
-#
-#if [ "$1" == "" ];then
-#    echo "The host name is empty."
-#    exit 1
-#else
-#	hostnamectl  --static set-hostname  $1
-#	hostnamectl  set-hostname  $1
-#fi
+if [[ "$(whoami)" != "root" ]]; then
+    echo "please run this script as root !" >&2
+    exit 1
+fi
+echo -e "\033[31m the script only Support CentOS_7 x86_64 \033[0m"
+echo -e "\033[31m system initialization script, Please Seriously. press ctrl+C to cancel \033[0m"
+
+# 检查是否为64位系统，这个脚本只支持64位脚本
+platform=`uname -i`
+if [ $platform != "x86_64" ];then
+    echo "this script is only for 64bit Operating System !"
+    exit 1
+fi
+
+if [ "$1" == "" ];then
+    echo "The host name is empty."
+    exit 1
+else
+	hostnamectl  --static set-hostname  $1
+	hostnamectl  set-hostname  $1
+fi
 
 cat << EOF
 +---------------------------------------+
