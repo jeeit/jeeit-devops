@@ -1,0 +1,35 @@
+1.直接下载rpm包安装
+wget -P /tmp https://download.docker.com/linux/centos/7/x86_64/stable/Packages/docker-ce-17.12.1.ce-1.el7.centos.x86_64.rpm
+2.上面官方地址国内访问较慢，可以使用下面的阿里云地址
+wget -P /tmp https://mirrors.aliyun.com/docker-ce/linux/centos/7/x86_64/stable/Packages/docker-ce-17.12.1.ce-1.el7.centos.x86_64.rpm
+3.安装本地RPM包命令：
+yum install -y /tmp/docker*.rpm && rm -f /tmp/docker*.rpm
+4.如果需其他指定版本docker的rpm包，可以访问以下地址：
+https://mirrors.aliyun.com/docker-ce/linux/centos/7/x86_64/stable/Packages/
+5.使用Docker中国加速器
+mkdir /etc/docker
+echo '{"registry-mirrors":["https://registry.docker-cn.com"]}' > /etc/docker/daemon.json
+6.启动Docker并设置开机启动
+systemctl start docker
+systemctl enable docker
+7.查看所安装的docker版本
+docker version
+
+
+--docker 没有vim
+先进入容器的内容
+docker exec -it 容器 /bin/bash
+然后分别执行这两条命令 就可以使用vim编辑文件
+
+apt-get update
+1
+apt-get install -y vim
+1
+评论说使用apt-get update 出现bash: apt-get: command not found
+可以把apt-get换成yum试一下
+
+
+查看容器日志：docker logs 容器id
+
+修改容器内的文件
+cp  x.cnf /data/docker/volumes/[容器id]/_data /xxx/xxx

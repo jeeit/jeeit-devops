@@ -76,6 +76,6 @@ docker version
 #1
 #镜像名包含关键字
 #
-#docker rmi --force `docker images | grep doss-api | awk '{print $3}'`    //其中doss-api为关键字
+#docker rmi --force `docker images | grep mysql | awk '{print $3}'`    //其中doss-api为关键字
 #
 #
