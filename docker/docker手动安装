@@ -33,3 +33,7 @@ apt-get install -y vim
 
 修改容器内的文件
 cp  x.cnf /data/docker/volumes/[容器id]/_data /xxx/xxx
+
+
+linux 全选
+https://blog.csdn.net/ztf312/article/details/83025297

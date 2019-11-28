@@ -1,0 +1,5 @@
+1.先在windows安装
+2.再把windows安装版的ROOT和wda  copy到tomcat的webapp下面
+3.把windows安装版的tocmat  server.xml  替换原有的 server.ml
+4.启动tomcat
+5.OK

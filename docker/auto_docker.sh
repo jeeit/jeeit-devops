@@ -79,8 +79,9 @@ docker version
 #docker rmi --force `docker images | grep mysql | awk '{print $3}'`    //其中doss-api为关键字
 #
 # 综上，我们可以写出以下脚本列出所有容器对应的名称，端口，及ip
-#
 # docker inspect -f='{{.Name}} {{.NetworkSettings.IPAddress}} {{.HostConfig.PortBindings}}' $(docker ps -aq)
 #
 #
+# 容器端口映射主机
+#https://www.cnblogs.com/x_wukong/p/10041071.html
 #
