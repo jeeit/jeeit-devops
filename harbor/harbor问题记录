@@ -1,0 +1,24 @@
+harbor自启失败
+https://blog.csdn.net/weixin_41465338/article/details/80146218
+
+
+1、停止Harbor
+$ docker-compose down -v
+Stopping nginx ... done
+Stopping harbor-jobservice ... done
+......
+Removing harbor-log ... done
+Removing network harbor_harbor
+
+2、启动Harbor
+$ docker-compose up -d
+Creating network "harbor_harbor" with the default driver
+Creating harbor-log ...
+......
+Creating nginx
+Creating harbor-jobservice ... done
+
+
+
+harbor 假死
+http://blog.itpub.net/25854343/viewspace-2649778/

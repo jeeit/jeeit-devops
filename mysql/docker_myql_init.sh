@@ -22,3 +22,6 @@ docker run --name mysql \
     -v /opt/docker-mysql/var/lib/mysql:/var/lib/mysql \
     -e MYSQL_ROOT_PASSWORD=123456 \
     -d mysql:5.6.45
+
+linux 下强制修改密码
+https://www.cnblogs.com/wuotto/p/9682400.html

@@ -2,7 +2,7 @@
 #centos7
 #https://github.com/aqzt/kjyw/blo ... ipt/init_centos7.sh
 #使用例子
-#wget hhttps://github.com/aqzt/kjyw/blo ... ipt/init_centos7.sh
+#wget https://raw.githubusercontent.com/aqzt/kjyw/master/linux-init-script/init_centos7.sh
 #bash init_centos7.sh 主机名
 #bash init_centos7.sh test123
 #

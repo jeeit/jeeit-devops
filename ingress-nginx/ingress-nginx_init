@@ -1,0 +1,25 @@
+官网：https://kubernetes.github.io/ingress-nginx/
+ingress是基于DNS域名做的路由分发
+
+1.下载安装脚本
+wget https://raw.githubusercontent.com/kubernetes/ingress-nginx/master/deploy/static/mandatory.yaml
+最好用课件里的脚本
+
+2.node下载必要的镜像
+grep image mandatory.yaml
+docker pull registry.cn-hangzhou.aliyuncs.com/liuyi01/defaultbackend-amd64:1.5
+docker pull quay.io/kubernetes-ingress-controller/nginx-ingress-controller:0.19.0
+docker tag registry.cn-hangzhou.aliyuncs.com/liuyi01/defaultbackend-amd64:1.5 k8s.gcr.io/defaultbackend-amd64:1.5
+
+3.给node打标签
+kubectl get nodes
+kubectl label node s1 app=ingress
+
+4.安装
+ kubectl apply -f mandatory.yaml
+
+5.检查安装情况
+ kubectl get all -n ingress-nginx
+
+6.测试node的ingress
+kubectl create -f ingress-demo.yaml

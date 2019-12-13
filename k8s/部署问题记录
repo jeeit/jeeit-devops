@@ -1,0 +1,48 @@
+加入节点失败
+https://www.cnblogs.com/it-peng/p/11393812.html
+
+k8s删除一个Node并重新加入集群
+https://www.cnblogs.com/hh2737/p/9070596.html
+
+
+docker
+mkdir /etc/docker/daemon.json
+{
+ "exec-opts":["native.cgroupdriver=systemd"]
+}
+
+可执行文件
+chmod u+x a.sh
+
+
+k8s的注册攻略
+https://www.cnblogs.com/effortsing/p/10360489.html
+
+
+
+
+kubeadm init
+https://www.cnblogs.com/fger/p/10444441.html
+
+
+
+keepalived配置，解决vip无法ping通
+https://blog.csdn.net/luckyzsion/article/details/87272920
+
+
+dashboard 登陆不安全提示 没有继续前往的按钮
+https://coding.imooc.com/learn/questiondetail/116844.html
+
+
+
+标签操作
+https://www.cnblogs.com/chuangcc/p/10616462.html
+
+
+
+cgroup-driver
+http://wenda.chinahadoop.cn/question/7493
+
+
+修改驱动
+Environment="KUBELET_CGROUP_ARGS=--cgroup-driver=cgroupfs"

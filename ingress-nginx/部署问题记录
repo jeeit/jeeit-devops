@@ -1,0 +1,16 @@
+k8s1.14版本以下需要修改配置
+If you are using a Kubernetes version previous to 1.14, you need to change kubernetes.io/os to beta.kubernetes.io/os at line 217 of mandatory.yaml, see Labels details.
+
+
+kubectl get deployment -n ingress-nginx
+kubectl delete deployment nginx-ingress-controller -n ingress-nginx
+kubectl delete pod nginx-ingress-controller-6db6648f85-mnbl7 -n ingress-nginx
+
+
+
+ingress status 一直 Pending
+https://www.cnblogs.com/liabio/p/11683860.html
+
+
+YAML识别器
+http://www.yamllint.com/
