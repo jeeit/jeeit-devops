@@ -46,3 +46,16 @@ http://wenda.chinahadoop.cn/question/7493
 
 修改驱动
 Environment="KUBELET_CGROUP_ARGS=--cgroup-driver=cgroupfs"
+
+
+查看某一个pod容器的日志
+
+
+删除pod
+kubectl get deployment -n ingress-nginx
+kubectl delete deployment nginx-ingress-controller -n ingress-nginx
+kubectl delete pod nginx-ingress-controller-6db6648f85-mnbl7 -n ingress-nginx
+
+强制删除pod
+
+kubectl delete pods <pod> --grace-period=0 --force

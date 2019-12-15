@@ -1,0 +1,26 @@
+安装：
+安装blueocean版
+https://jenkins.io/zh/doc/book/installing/
+https://hub.docker.com/r/jenkinsci/blueocean
+
+安装war
+nohup java -jar jenkins.war  --httpPort=8080 &
+查看token
+
+
+更新插件失败：
+Jenkins home directory 找到这个文件 hudson.model.UpdateCenter.xml.
+
+修改成下面正确的URL
+http://updates.jenkins-ci.org/update-center.json
+
+kill掉jenkins进程，再重启
+再修改jenkins/updates/default.json 里的google检测地址改为baidu
+再坑掉再重启动，我R
+坑死爹
+
+
+
+Jenkins 改成中文语言显示
+安装插件
+Localization: Chinese (Simplified)

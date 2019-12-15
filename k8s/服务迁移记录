@@ -1,0 +1,16 @@
+1.拉取JDK基础镜像，打成tag，并push到自己的仓库里
+docker pull openjdk:8-jre-alpine
+docker tag openjdk:8-jre-alpine 192.168.1.101/test/openjdk:8-jre-alpine
+docker push 192.168.1.101/test/openjdk:8-jre-alpine
+
+2.101安装jdk和maven
+https://blog.csdn.net/weixin_42884654/article/details/89069727
+
+3.生成运行的相关文件
+mvn package
+
+4.制作Dockerfile
+docker images|grep jre
+
+5.cronjob：K8s的定时任务
+kubectl get cronjob
