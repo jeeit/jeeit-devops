@@ -28,6 +28,9 @@ apt-get install -y vim
 评论说使用apt-get update 出现bash: apt-get: command not found
 可以把apt-get换成yum试一下
 
+yum install -y dos2unix
+
+dos2unix aaa.sh
 
 查看容器日志：docker logs 容器id
 
@@ -37,3 +40,17 @@ cp  x.cnf /data/docker/volumes/[容器id]/_data /xxx/xxx
 
 linux 全选
 https://blog.csdn.net/ztf312/article/details/83025297
+
+
+查看容器IP地址
+我们可以通过以下命令查看容器运行的各种数据
+ docker inspect mycentos2
+
+
+ docker将宿主机文件复制到容器内
+ docker将/tmp目录下的a.sh复制到容器内部
+ 查看容器ID：
+ docker ps |grep {image_name}
+ 复制：
+ docker cp /tmp/a.sh 容器ID:/root
+ 以上。

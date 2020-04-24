@@ -1,1 +1,10 @@
 https://www.cnblogs.com/skyislimit/p/9927969.html
+
+
+yum安装tomcat
+https://www.cnblogs.com/nicknailo/p/8571004.html
+
+systemctl start tomcat.service
+
+
+/usr/share/tomcat/webapps

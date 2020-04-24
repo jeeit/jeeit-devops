@@ -1,0 +1,11 @@
+jdk
+maven
+docker
+git
+
+
+SSH       8866
+gitlab    80
+jenkins   8081
+harbor    1180
+dashboard 30005

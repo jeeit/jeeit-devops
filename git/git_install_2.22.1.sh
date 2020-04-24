@@ -8,6 +8,7 @@
 ##############
 wget https://mirrors.edge.kernel.org/pub/software/scm/git/git-2.12.2.tar.gz
 ##cd git-2.22.1/
+mkdir git-2.22.1
 cd git-2.22.1/ || exit
 make prefix=/usr/local all
 yum install curl-devel expat-devel gettext-devel  openssl-devel zlib-devel

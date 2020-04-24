@@ -1,0 +1,14 @@
+资料地址：
+https://segmentfault.com/a/1190000019019787?utm_source=tag-newest
+
+
+
+【Git学习】卸载重装Gitlab的时候，出现* ruby_block[supervise_redis_sleep] action run 卡死不动的解决方法
+https://www.jianshu.com/p/1af7f87497a2
+
+
+彻底卸载GitLab并重装
+https://blog.csdn.net/jia12216/article/details/84853136
+
+$ sudo gitlab-ctl start # 启动
+$ sudo gitlab-ctl stop # 停止

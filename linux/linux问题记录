@@ -1,0 +1,11 @@
+【Linux】黑名单、白名单配置/etc/hosts.allow和/etc/hosts.deny
+https://jenkins.io/zh/doc/book/installing/
+
+黑名单端口
+http://antivirus.neu.edu.cn/scan/ssh.php
+
+
+
+修改ssh端口号
+vim /etc/ssh/sshd_config
+systemctl restart sshd

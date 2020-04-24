@@ -1,0 +1,19 @@
+#
+#centos7
+#https://github.com/aqzt/kjyw/blo ... ipt/init_centos7.sh
+#使用例子
+#wget https://raw.githubusercontent.com/aqzt/kjyw/master/linux-init-script/init_centos7.sh
+#bash init_centos7.sh 主机名
+#bash init_centos7.sh test123
+#
+#curl -s https://raw.githubusercontent.com/aqzt/kjyw/master/linux-init-script/init_centos7.sh | bash
+#或者
+#curl -fsSL https://raw.githubusercontent.com/aqzt/kjyw/master/linux-init-script/init_centos7.sh | sed 's/\r//g' | sh
+#
+#
+
+#!/bin/bash
+ init centos7
+ 20160818
+
+# 检查是否为root用户，脚本必须在root权限下运行

@@ -4,3 +4,11 @@ https://blog.csdn.net/LuoQuHen/article/details/96196679
 
 linux系统下安装jdk8和maven
 https://blog.csdn.net/weixin_42884654/article/details/89069727
+
+更新源
+
+我们在linux系统中更新了配置文件profile文件以后，并不会立即生效，需要我们执行一下相关的命令才会立即生效：
+
+方法一：让/etc/profile文件修改后立即生效 ,可以使用如下命令: # . /etc/profile 注意: . 和 /etc/profile 有空格
+
+方法二：让/etc/profile文件修改后立即生效 ,可以使用如下命令: # source /etc/profile

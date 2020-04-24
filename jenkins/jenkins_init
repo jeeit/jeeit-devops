@@ -3,16 +3,28 @@
 https://jenkins.io/zh/doc/book/installing/
 https://hub.docker.com/r/jenkinsci/blueocean
 
+
+docker run \
+  -u root \
+  -d \
+  -p 8068:8080 \
+  -p 50000:50000 \
+  -v jenkins-data:/var/jenkins_home \
+  -v /var/run/docker.sock:/var/run/docker.sock \
+  jenkinsci/blueocean
+
+
+
+
 安装war
-nohup java -jar jenkins.war  --httpPort=8080 &
+nohup java -jar jenkins.war  --httpPort=8081 &
 查看token
 
+没有updates文件目录 ，就再启一次，不kill
 
 更新插件失败：
 Jenkins home directory 找到这个文件 hudson.model.UpdateCenter.xml.
-
-修改成下面正确的URL
-http://updates.jenkins-ci.org/update-center.json
+把https改为http
 
 kill掉jenkins进程，再重启
 再修改jenkins/updates/default.json 里的google检测地址改为baidu

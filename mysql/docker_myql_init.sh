@@ -12,8 +12,7 @@ update user set host = '%' where user = 'root';
 
 
 mysql 不区分大小写
-
-
+lower_case_table_names=1
 
 docker run --name mysql \
     --restart=always \

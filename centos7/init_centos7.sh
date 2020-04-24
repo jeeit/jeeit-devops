@@ -1,20 +1,6 @@
-#
-#centos7
-#https://github.com/aqzt/kjyw/blo ... ipt/init_centos7.sh
-#使用例子
-#wget https://raw.githubusercontent.com/aqzt/kjyw/master/linux-init-script/init_centos7.sh
-#bash init_centos7.sh 主机名
-#bash init_centos7.sh test123
-#
-#curl -s https://raw.githubusercontent.com/aqzt/kjyw/master/linux-init-script/init_centos7.sh | bash
-#或者
-#curl -fsSL https://raw.githubusercontent.com/aqzt/kjyw/master/linux-init-script/init_centos7.sh | sed 's/\r//g' | sh
-#
-#
-
 #!/bin/bash
- init centos7
- 20160818
+# init centos7
+# 20160818
 
 # 检查是否为root用户，脚本必须在root权限下运行
 if [[ "$(whoami)" != "root" ]]; then
@@ -72,6 +58,7 @@ sleep 1
 limits_config(){
 cat > /etc/rc.d/rc.local << EOF
 #!/bin/bash
+
 touch /var/lock/subsys/local
 ulimit -SHn 1024000
 EOF
@@ -82,13 +69,13 @@ echo "ulimit -SHn 1024000" >> /etc/rc.d/rc.local
 sed -i "/^ulimit -s.*/d" /etc/profile
 sed -i "/^ulimit -c.*/d" /etc/profile
 sed -i "/^ulimit -SHn.*/d" /etc/profile
-
+ 
 cat >> /etc/profile << EOF
 ulimit -c unlimited
 ulimit -s unlimited
 ulimit -SHn 1024000
 EOF
-
+ 
 source /etc/profile
 ulimit -a
 cat /etc/profile | grep ulimit
@@ -117,8 +104,8 @@ EOF
 
 sleep 1
 }
-
-# 优化内核参数 tune kernel parametres
+ 
+# 优化内核参数 tune kernel parametres 
 sysctl_config(){
 if [ ! -f "/etc/sysctl.conf.bak" ]; then
     cp /etc/sysctl.conf /etc/sysctl.conf.bak
@@ -157,7 +144,7 @@ vm.overcommit_memory = 1
 vm.swappiness = 1
 fs.file-max = 1024000
 EOF
-
+ 
 #reload sysctl
 /sbin/sysctl -p
 sleep 1
@@ -169,7 +156,7 @@ echo "LANG=\"en_US.UTF-8\"">/etc/locale.conf
 source  /etc/locale.conf
 }
 
-
+ 
 #关闭SELINUX disable selinux
 selinux_config(){
 sed -i 's/SELINUX=enforcing/SELINUX=disabled/g' /etc/selinux/config
@@ -184,6 +171,7 @@ cat > /opt/sh/ipt.sh << EOF
 #!/bin/bash
 /sbin/iptables -F
 /sbin/iptables -t raw -F
+
 /sbin/iptables -A INPUT -s 127.0.0.1 -d 127.0.0.1 -j ACCEPT
 /sbin/iptables -A INPUT -s 127.0.0.1 -j ACCEPT
 /sbin/iptables -A INPUT -m state --state UNTRACKED,ESTABLISHED,RELATED -j ACCEPT
@@ -200,8 +188,10 @@ cat > /opt/sh/ipt.sh << EOF
 /sbin/iptables -t raw -A OUTPUT -s 192.168.20.0/255.255.255.0 -p tcp --sport 80  -j NOTRACK
 /sbin/iptables -A INPUT   -s 192.168.10.0/255.255.255.0 -p icmp -j ACCEPT
 /sbin/iptables -A INPUT   -s 192.168.20.0/255.255.255.0 -p icmp -j ACCEPT
+
 /sbin/iptables -A INPUT -j REJECT
 /sbin/iptables -A FORWARD -j REJECT
+
 /sbin/service iptables save
 echo ok
 EOF
@@ -261,7 +251,7 @@ echo "127.0.0.1   localhost   localhost.localdomain">/etc/hosts
 #sed -i 's/IPV6INIT=yes/IPV6INIT=no/g' /etc/sysconfig/network-scripts/ifcfg-enp0s8
 
 
-for line in $(ls -lh /etc/sysconfig/network-scripts/ifcfg-* | awk -F '[ ]+' '{print $9}')
+for line in $(ls -lh /etc/sysconfig/network-scripts/ifcfg-* | awk -F '[ ]+' '{print $9}')  
 do
 if [ -f  $line ]
         then
@@ -286,7 +276,7 @@ if [ ! -f \$HISTDIR ];then
 touch \$HISTDIR
 chmod 666 \$HISTDIR
 fi
-export HISTTIMEFORMAT="{\"TIME\":\"%F %T\",\"IP\":\"\$(ip a | grep -E '192.168|172' | head -1 | awk '{print \$2}' | cut -d/ -f1)\",\"LI\":\"\$(who -u am i 2>/dev/null| awk '{print \$NF}'|sed -e 's/[()]//g')\",\"LU\":\"\$(who am i|awk '{print \$1}')\",\"NU\":\"\${USER}\",\"CMD\":\""
+export HISTTIMEFORMAT="{\"TIME\":\"%F %T\",\"IP\":\"\$(ip a | grep -E '192.168|172' | head -1 | awk '{print \$2}' | cut -d/ -f1)\",\"LI\":\"\$(who -u am i 2>/dev/null| awk '{print \$NF}'|sed -e 's/[()]//g')\",\"LU\":\"\$(who am i|awk '{print \$1}')\",\"NU\":\"\${USER}\",\"CMD\":\"" 
 export PROMPT_COMMAND='history 1|tail -1|sed "s/^[ ]\+[0-9]\+  //"|sed "s/$/\"}/">> /var/log/command.log'
 EOF
 source /etc/bashrc
@@ -294,7 +284,7 @@ source /etc/bashrc
 
 # 服务优化设置
 service_config(){
-/usr/bin/systemctl stop  firewalld.service
+/usr/bin/systemctl stop  firewalld.service 
 /usr/bin/systemctl disable  firewalld.service
 /usr/bin/systemctl enable iptables.service
 /usr/bin/systemctl enable NetworkManager-wait-online.service
@@ -327,6 +317,7 @@ echo ok
 vim_config(){
 cat > /root/.vimrc << EOF
 set history=1000
+
 EOF
 
 #autocmd InsertLeave * se cul
@@ -379,3 +370,8 @@ main(){
     done_ok
 }
 main
+
+
+
+
+

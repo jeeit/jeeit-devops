@@ -8,11 +8,22 @@ tar -xvf >>
 vim harbor.cfg
 
 4.安装docker-compose
-下载 >>>   https://d11.baidupcs.com/file/215daec920746cf607aec5e8e1ac0c7a?bkt=en-2bd419aa17f4904ff6b50012b968be87f2ab6ad18b45de2f37f877c17aebad4de526a8bc6ec229d2&xcode=df3c7f8e6e881575b513480f42541becb6d1b4b5d3eeb1c23156dc7677e74b233dc34173466c424b565b0c3cf02dd86a9a7e3ac4ae9d7ad8&fid=3997485081-250528-718800051980476&time=1576130785&sign=FDTAXGERLQBHSKf-DCb740ccc5511e5e8fedcff06b081203-315TFtVqfsvaC3CWN0kpNdiw5Cw%3D&to=d11&size=11750136&sta_dx=11750136&sta_cs=311&sta_ft=0&sta_ct=7&sta_mt=5&fm2=MH%2CYangquan%2CAnywhere%2C%2Cchongqing%2Ccmnet&ctime=1538556774&mtime=1565176256&resv0=cdnback&resv1=0&resv2=rlim&resv3=5&resv4=11750136&vuk=3428862173&iv=0&htype=&randtype=&newver=1&newfm=1&secfm=1&flow_ver=3&pkey=en-7f46efaadb19b44ed4aed4b8532eb4afe07aad104bcfe0468b37f3109087e0085241bed9a1752af8&sl=76480590&expires=8h&rt=sh&r=439092269&vbdid=3966194141&fin=docker-compose-Linux-x86_64-1.22.0&fn=docker-compose-Linux-x86_64-1.22.0&rtype=1&dp-logid=8015156550224909585&dp-callid=0.1&hps=1&tsl=80&csl=80&csign=rGMi5Uc2DzDRxSFqynSEDDbrMiM%3D&so=0&ut=6&uter=4&serv=0&uc=2976489554&ti=61e7e2d5c62a720664ceef55a6d17bb12a660c2367a64c6f&reqlabel=250528_f_0c919d51342f44f9774c5c1cd31517d1_-1_d33d5302ddef9b4d36406a7bb7432a92&by=themis
+ #迅雷下载 >>>   https://d11.baidupcs.com/file/215daec920746cf607aec5e8e1ac0c7a?bkt=en-2bd419aa17f4904ff6b50012b968be87f2ab6ad18b45de2f37f877c17aebad4de526a8bc6ec229d2&xcode=df3c7f8e6e881575b513480f42541becb6d1b4b5d3eeb1c23156dc7677e74b233dc34173466c424b565b0c3cf02dd86a9a7e3ac4ae9d7ad8&fid=3997485081-250528-718800051980476&time=1576130785&sign=FDTAXGERLQBHSKf-DCb740ccc5511e5e8fedcff06b081203-315TFtVqfsvaC3CWN0kpNdiw5Cw%3D&to=d11&size=11750136&sta_dx=11750136&sta_cs=311&sta_ft=0&sta_ct=7&sta_mt=5&fm2=MH%2CYangquan%2CAnywhere%2C%2Cchongqing%2Ccmnet&ctime=1538556774&mtime=1565176256&resv0=cdnback&resv1=0&resv2=rlim&resv3=5&resv4=11750136&vuk=3428862173&iv=0&htype=&randtype=&newver=1&newfm=1&secfm=1&flow_ver=3&pkey=en-7f46efaadb19b44ed4aed4b8532eb4afe07aad104bcfe0468b37f3109087e0085241bed9a1752af8&sl=76480590&expires=8h&rt=sh&r=439092269&vbdid=3966194141&fin=docker-compose-Linux-x86_64-1.22.0&fn=docker-compose-Linux-x86_64-1.22.0&rtype=1&dp-logid=8015156550224909585&dp-callid=0.1&hps=1&tsl=80&csl=80&csign=rGMi5Uc2DzDRxSFqynSEDDbrMiM%3D&so=0&ut=6&uter=4&serv=0&uc=2976489554&ti=61e7e2d5c62a720664ceef55a6d17bb12a660c2367a64c6f&reqlabel=250528_f_0c919d51342f44f9774c5c1cd31517d1_-1_d33d5302ddef9b4d36406a7bb7432a92&by=themis
 放到指定目录：  mv docker-compose-Linux-x86_64-1.22.0 /usr/local/bin/docker-compose
 给可执行权限： chmod +x /usr/local/bin/docker-compose
 
 docker-compose --version
+
+4.Harbor使用 -- 修改80端口
+https://www.cnblogs.com/huangjc/p/6420355.html
+
+这地别忘改了
+auth:
+  token:
+    issuer: harbor-token-issuer
+    realm: http://192.168.180.105:1180/service/token
+
+
 
 4.安装 harbor
 ./install.sh
