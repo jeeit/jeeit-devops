@@ -1,5 +1,18 @@
-yum 安装mysql
-https://blog.csdn.net/buyaopingbixiazai/article/details/81382374
+yum 安装mysql 5.6
+    https://blog.csdn.net/buyaopingbixiazai/article/details/81382374
+    https://www.jianshu.com/p/905d7f2196a3
 
 
-https://www.jianshu.com/p/905d7f2196a3
+yum安装mysql 5.7
+    https://blog.csdn.net/wngpenghao/article/details/78862923
+
+    ALTER USER 'root'@'localhost' IDENTIFIED BY '123456' ;
+
+    随意改密码：
+            https://blog.csdn.net/ytx2014214081/article/details/80954482
+
+    远程连接：
+            授权
+            grant all privileges on *.* to 'root'@'%' identified by '123456' with grant option;
+            刷新
+            flush privileges;
