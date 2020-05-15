@@ -1,0 +1,1 @@
+使用ethtool、mii-tool、ip、ifconfig等命令，结合系统日志/var/log/messages进行判断
