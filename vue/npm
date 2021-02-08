@@ -1,0 +1,13 @@
+#'cross-env' 不是内部或外部命令，也不是可运行的程序
+运行: cnpm  i cross-env --save-dev
+
+
+# webpack 不是内部或外部命令
+cnpm install webpack -g
+
+
+
+
+# linux 安装npm
+
+

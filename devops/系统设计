@@ -1,0 +1,41 @@
+### 服务器资源分配
+107 4核8G，后端应用，前端应用,nginx，jenkins
+106 1核2G，中间件，redis,hbase,docker,harbor
+105 1核4G，代码仓库，git,从库
+104 4核3G，数据库
+
+
+
+// 安装进度：
+1.数据库，redis已经装好
+2.nginx
+3.代码仓库
+
+107：jenkins，应用，jdk，git，maven
+
+106：redis
+
+105：gitlab,git
+
+104：数据库
+
+
+
+
+### 要部署的服务
+=================:DEVG环境
+---------应用
+数据库：mysql
+应用服务：java
+中间件：
+---------代码
+code仓库：git,svn
+devops服务：jenkins,k8s,maven
+
+=================:生产环境
+---------应用
+数据库：mysql
+应用服务：java
+中间件：redis,hbase,docker,harbor,nginx
+
+

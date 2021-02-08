@@ -36,3 +36,12 @@ kill掉jenkins进程，再重启
 Jenkins 改成中文语言显示
 安装插件
 Localization: Chinese (Simplified)
+
+
+
+修改jenkins密码
+https://blog.51cto.com/12629984/1980578
+
+配置jenkins
+配置jdk、git、maven、gitlab
+git的私钥

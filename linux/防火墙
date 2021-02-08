@@ -1,0 +1,71 @@
+## 原文链接
+https://blog.csdn.net/u014150715/article/details/103196406
+
+查看所有开放端口信息：
+netstat -anp
+
+查看防火墙状态
+service iptables status
+
+打开端口号：
+
+iptables -A INPUT -ptcp --dport  8099 -j ACCEPT
+1
+关闭端口号：
+
+iptables -A OUTPUT -p tcp --dport 端口号-j DROP
+
+查看是否打开一个端口：
+
+[root@localhost datas]# netstat -an |grep 3000
+
+验证一个服务是否启动成功
+
+[root@localhost bin]# ps -ef |grep tomcat
+
+修改防火墙配置文件
+端口被防火墙限制原因，开启防火墙过滤端口
+
+[root@localhost bin]# vim /etc/sysconfig/iptables
+
+
+防火墙的开启：
+
+systemctl start firewalld
+
+防火墙的关闭：
+
+systemctl stop firewalld.service
+
+查看防火墙状态：
+
+firewall-cmd --state
+
+重启防火墙：
+
+firewall-cmd --reload
+
+
+
+
+
+
+查看防火墙：
+
+[root@CactiEZ ~]# systemctl status firewalld.service
+1
+关闭防火墙：
+
+[root@CactiEZ ~]# systemctl stop firewalld.service
+1
+开启防火墙：
+
+[root@CactiEZ ~]# systemctl start firewalld.service
+1
+永久关闭防火墙：
+
+[root@CactiEZ ~]# systemctl disable firewalld.service
+1
+永久开启防火墙：
+
+[root@CactiEZ ~]# systemctl enable firewalld.service

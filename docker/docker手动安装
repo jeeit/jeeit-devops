@@ -9,8 +9,9 @@ https://mirrors.aliyun.com/docker-ce/linux/centos/7/x86_64/stable/Packages/
 5.使用Docker中国加速器
 mkdir /etc/docker
 echo '{"registry-mirrors":["https://registry.docker-cn.com"]}' > /etc/docker/daemon.json
-6.启动Docker并设置开机启动
+6.启动Docker
 systemctl start docker
+设置docker开机自启动如下：
 systemctl enable docker
 7.查看所安装的docker版本
 docker version
@@ -54,3 +55,8 @@ https://blog.csdn.net/ztf312/article/details/83025297
  复制：
  docker cp /tmp/a.sh 容器ID:/root
  以上。
+
+
+// docker停止所有容器
+docker stop $(docker ps -aq)
+

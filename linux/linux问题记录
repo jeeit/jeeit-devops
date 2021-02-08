@@ -9,3 +9,14 @@ http://antivirus.neu.edu.cn/scan/ssh.php
 修改ssh端口号
 vim /etc/ssh/sshd_config
 systemctl restart sshd
+
+
+//查看Linux系统日志
+
+
+
+//开机自启动
+chkconfig --level 345 mysqld on
+
+//如果文件里有空格或换行符
+就是直接在最上面加上[rhel]

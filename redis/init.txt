@@ -1,0 +1,15 @@
+连接远程
+
+redis-cli -h 47.101.63.222 -p 56379
+连接本地
+
+redis-cli
+设置密码
+
+config set requirepass pass_123456
+获取密码
+
+config get requirepass
+登录
+
+auth pass_123456

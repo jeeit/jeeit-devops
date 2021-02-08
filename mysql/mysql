@@ -16,3 +16,38 @@ yum安装mysql 5.7
             grant all privileges on *.* to 'root'@'%' identified by '123456' with grant option;
             刷新
             flush privileges;
+
+
+# 安装 Mysql 8
+https://dev.mysql.com/downloads/
+rpm -ivh  xx.rpm
+
+yum install -y mysql mysql-server
+
+vi /etc/my.cnf
+
+lower_case_table_names=1
+
+systemctl restart mysqld
+
+grep password /var/log/mysqld.log
+
+set global validate_password.check_user_name=0;
+set global validate_password.policy=0;
+set global validate_password.length=1;
+
+alter user 'root'@'localhost' identified by 'root';
+
+use mysql;
+//修改远程链接
+update user set host = '%' where user = 'root';
+// root授权所有权限
+GRANT ALL ON *.* TO 'root'@'%';
+
+
+刷新配置
+FLUSH PRIVILEGES;
+
+//查看远程组
+select host, user, authentication_string, plugin from user;
+

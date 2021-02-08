@@ -1,0 +1,19 @@
+主从复制
+https://blog.csdn.net/u013068184/article/details/107691389
+
+
+change master to MASTER_HOST='192.168.1.104',MASTER_PORT=3306,MASTER_USER='repl',MASTER_PASSWORD='Fufeng520!',MASTER_LOG_FILE=' mysql-bin.000002',MASTER_LOG_POS=156;
+
+问题排查
+https://blog.csdn.net/mbytes/article/details/86711508
+
+
+ mysql-bin.000001
+ mysql-bin.000001
+
+
+！！！注意看mysql的监控日志
+
+
+ mysql 密码规则问题
+ https://www.cnblogs.com/zhurong/p/9898675.html

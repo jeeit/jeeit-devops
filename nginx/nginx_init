@@ -1,0 +1,5 @@
+nginx启动、关闭与重启命令
+nginx启动
+1、启动nginx：./nginx
+2、关闭nginx：./nginx  -s  stop
+3、重启nginx：./nginx -s reload

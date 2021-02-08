@@ -1,5 +1,6 @@
-资料地址：
-https://segmentfault.com/a/1190000019019787?utm_source=tag-newest
+安装参考1：https://www.cnblogs.com/ddz-linux/p/10698907.html
+安装参考2：https://jingyan.baidu.com/article/9f63fb91746714c8400f0e8c.html
+参考3：https://blog.csdn.net/zhayushui/article/details/79757911
 
 
 
@@ -7,8 +8,12 @@ https://segmentfault.com/a/1190000019019787?utm_source=tag-newest
 https://www.jianshu.com/p/1af7f87497a2
 
 
-彻底卸载GitLab并重装
+彻底卸载GitLab并重装： 安装没用
 https://blog.csdn.net/jia12216/article/details/84853136
 
 $ sudo gitlab-ctl start # 启动
 $ sudo gitlab-ctl stop # 停止
+
+
+设置下次开机自启动
+$systemctl enable gitlab-runsvdir.service
